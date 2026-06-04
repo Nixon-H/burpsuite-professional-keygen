@@ -1,11 +1,11 @@
-# BurpSuite Professional 2025 - Universal Activation Tool
+# BurpSuite Professional 2026 - Universal Activation Tool
 
 ![BurpSuite](https://img.shields.io/badge/BurpSuite-Professional-orange)
 ![Java](https://img.shields.io/badge/Java-21.0.9-blue)
 ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-green)
 ![License](https://img.shields.io/badge/License-Educational-red)
 
-A comprehensive activation tool for BurpSuite Professional 2025 that works across all major operating systems. This repository contains the keygen utility with advanced Java Instrumentation capabilities and detailed installation instructions.
+A comprehensive activation tool for BurpSuite Professional 2026 that works across all major operating systems. This repository contains the keygen utility with advanced Java Instrumentation capabilities and detailed installation instructions.
 
 ## 🎯 Features
 
@@ -15,6 +15,9 @@ A comprehensive activation tool for BurpSuite Professional 2025 that works acros
 - ✅ **Dynamic Bytecode Engineering**: Real-time class transformation
 - ✅ **GUI-Based Interface**: User-friendly keygen application
 - ✅ **Version Agnostic**: Works across multiple BurpSuite versions
+- ✅ **Auto-Version Detection**: Fetches latest version from PortSwigger API, checks your local jar, and prompts download only when newer version exists
+- ✅ **Copy Link Button**: One-click copy of the download URL to clipboard (falls back when clicking the label fails)
+- ✅ **Auto-Run Mode**: Launch BurpSuite directly from the keygen with CLI flags
 
 ## 🔬 Internal Working Mechanism
 
@@ -63,6 +66,53 @@ The tool extends its reach to internal HTTP clients used by plugins and extensio
    - **Network Libs** → Patched for Response Mocking.
    - **Core Logic** → Patched for Integrity Bypass.
 4. **Execution**: The modified bytecode is returned to the JVM, and the application runs transparently with the altered logic.
+
+---
+
+### 🆕 Version Detection & Copy Link
+
+#### Auto-Version Detection
+When the keygen launches, it:
+1. Fetches the latest BurpSuite release version from PortSwigger's API at `https://portswigger.net/burp/releases/data?pageSize=5`
+2. Parses the JSON response for `"BuildCategoryId":"desktop"` and `"Version":"X.Y.Z"`
+3. Scans the local directory (where `nixon.jar` resides) for `burpsuite_*.jar` files (picks the most recently modified)
+4. Compares: if your local jar's filename already contains the latest version → shows green **"already the latest version"**
+5. If a newer version exists → shows blue **"Latest version: X.Y.Z. Click to download"** with a **Copy Link** button
+
+#### Copy Link Button
+- Added as a fallback when clicking the blue label fails to open the browser
+- Positioned right beside the "Click to download" text at `x=460, y=5`
+- Uses `java.awt.datatransfer.Clipboard` to copy the full download URL:
+  ```
+  https://portswigger.net/burp/releases/download?product=desktop&type=Jar&version=X.Y.Z
+  ```
+- Implemented via bytecode injection (ASM) into `KeygenForm.main()` — no modification to original click handler
+- Uses `ActionListener` (not `MouseAdapter`) to prevent event leaking to the underlying label
+
+---
+
+### 🔧 CLI Arguments
+
+The keygen supports the following command-line flags:
+
+| Flag | Long Flag | Description |
+|------|-----------|-------------|
+| `-a` | `-auto` | Enable auto-run mode (launches BurpSuite automatically on keygen start) |
+| `-a 0` | `-auto 0` | Disable auto-run mode |
+| `-i` | `-ignore` | Enable ignore update mode (skip version check on auto-run) |
+| `-i 0` | `-ignore 0` | Disable ignore update mode |
+| `-n` | `-name` | Set a custom license name (overrides system username) |
+
+Flags are persisted to `.config.ini` in the same directory as `nixon.jar`.
+
+### 📁 Configuration File
+
+The keygen stores its settings in a `.config.ini` file located in the same directory as `nixon.jar`:
+
+```ini
+auto_run=0    # 0 = disabled, 1 = auto-launch BurpSuite
+ignore=0      # 0 = check for updates, 1 = skip version check
+```
 
 ## 📋 Prerequisites
 
@@ -429,13 +479,27 @@ Once Java 21 is properly installed on your system, launching the keygen is strai
 java -jar nixon.jar
 ```
 
+### With Auto-Run (Launches BurpSuite automatically)
+
+```bash
+java -jar nixon.jar -a
+```
+
+### With Custom License Name
+
+```bash
+java -jar nixon.jar -n "YourName"
+```
+
 ### What Happens When You Run It
 
 1. **JVM Initialization**: The Java Virtual Machine starts
 2. **Agent Loading**: The Instrumentation Agent registers with the JVM
 3. **Transformer Registration**: ClassFileTransformer hooks into the class loading mechanism
 4. **GUI Launch**: The keygen interface window appears
-5. **Ready State**: Bytecode manipulation capabilities are now active
+5. **Version Check**: Fetches latest BurpSuite version from PortSwigger API
+6. **Status Display**: Shows either "already the latest version" (green) or download prompt (blue with Copy Link button)
+7. **Ready State**: Bytecode manipulation capabilities are now active
 
 ### Platform-Specific Notes
 
@@ -695,13 +759,23 @@ java -jar nixon.jar 2>&1 | tee error.log
 **Cause:** Corrupted or incomplete JAR file.
 
 **Solution:**
-1. Check file size (should be several MB)
+1. Check file size (should be ~30+ KB)
 2. Re-download:
    ```bash
    cd ..
    rm -rf burpsuite-professional-keygen
    git clone https://github.com/Nixon-H/burpsuite-professional-keygen.git
    ```
+
+#### ❌ "Click to download" shows even when I'm on the latest version
+
+**Cause:** The version detection compares your local `burpsuite_*.jar` filename against the latest version from the PortSwigger API. If there's no matching `burpsuite_*.jar` in the same directory as `nixon.jar`, the check falls through.
+
+**Solution:**
+1. Ensure your downloaded BurpSuite jar is in the same directory as `nixon.jar`
+2. The jar must match the glob pattern `burpsuite_*.jar` (e.g., `burpsuite_desktop_v2026.4.3.jar`)
+3. Partially downloaded files (`.fdmdownload`, `.part`) will not be detected
+4. Once detected, the label will show green "already the latest version (X.Y.Z)"
 
 ---
 
@@ -722,6 +796,18 @@ java -verbose:class -jar nixon.jar
 **Combine multiple options:**
 ```bash
 java -Xmx1024m -verbose:class -jar nixon.jar
+```
+
+### CLI Auto-Run Examples
+
+**Always run without version prompt:**
+```bash
+java -jar nixon.jar -a -i
+```
+
+**Run with custom name and auto-launch:**
+```bash
+java -jar nixon.jar -n "YourLicenseName" -a
 ```
 
 ### Logging and Debugging
@@ -781,8 +867,10 @@ dir "C:\Program Files\Java"
 
 ```
 burpsuite-professional-keygen/
-├── nixon.jar                    # Main keygen with Instrumentation Agent
+├── nixon.jar                    # Main keygen with Instrumentation Agent (v2.0)
 ├── README.md                    # This comprehensive guide
+├── archive/
+│   └── nixon_depreciated_archive_v1.0.jar  # Original v1.0 release (legacy)
 ```
 
 ---
@@ -937,4 +1025,4 @@ If this tool helped you understand Java Instrumentation, bytecode manipulation, 
 
 **Made with ❤️ for the security research and reverse engineering community**
 
-*Last updated: November 2025*
+*Last updated: June 2026*
