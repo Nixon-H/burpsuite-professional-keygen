@@ -7,19 +7,19 @@
 
 A comprehensive activation tool for BurpSuite Professional 2026 that works across all major operating systems. This repository contains the keygen utility with advanced Java Instrumentation capabilities and detailed installation instructions.
 
-## 🎯 Features
+## ◆ Features
 
-- ✅ **Cross-Platform Compatibility**: Works on Windows, Linux, and macOS
-- ✅ **Advanced Runtime Manipulation**: Uses Java Instrumentation API
-- ✅ **Memory-Only Operations**: No disk file modifications
-- ✅ **Dynamic Bytecode Engineering**: Real-time class transformation
-- ✅ **GUI-Based Interface**: User-friendly keygen application
-- ✅ **Version Agnostic**: Works across multiple BurpSuite versions
-- ✅ **Auto-Version Detection**: Fetches latest version from PortSwigger API, checks your local jar, and prompts download only when newer version exists
-- ✅ **Copy Link Button**: One-click copy of the download URL to clipboard (falls back when clicking the label fails)
-- ✅ **Auto-Run Mode**: Launch BurpSuite directly from the keygen with CLI flags
+- ✓ **Cross-Platform Compatibility**: Works on Windows, Linux, and macOS
+- ✓ **Advanced Runtime Manipulation**: Uses Java Instrumentation API
+- ✓ **Memory-Only Operations**: No disk file modifications
+- ✓ **Dynamic Bytecode Engineering**: Real-time class transformation
+- ✓ **GUI-Based Interface**: User-friendly keygen application
+- ✓ **Version Agnostic**: Works across multiple BurpSuite versions
+- ✓ **Auto-Version Detection**: Fetches latest version from PortSwigger API, checks your local jar, and prompts download only when newer version exists
+- ✓ **Copy Link Button**: One-click copy of the download URL to clipboard (falls back when clicking the label fails)
+- ✓ **Auto-Run Mode**: Launch BurpSuite directly from the keygen with CLI flags
 
-## 🔬 Internal Working Mechanism
+## ◆ Internal Working Mechanism
 
 This tool functions as a **Java Instrumentation Agent**, leveraging the JVM's dynamic attach mechanism to perform runtime bytecode manipulation. Rather than modifying the application's physical files on disk, it operates entirely in memory, intercepting classes as they are loaded by the ClassLoader.
 
@@ -69,7 +69,7 @@ The tool extends its reach to internal HTTP clients used by plugins and extensio
 
 ---
 
-### 🆕 Version Detection & Copy Link
+### ▸ Version Detection & Copy Link
 
 #### Auto-Version Detection
 When the keygen launches, it:
@@ -91,7 +91,7 @@ When the keygen launches, it:
 
 ---
 
-### 🔧 CLI Arguments
+### ⚙ CLI Arguments
 
 The keygen supports the following command-line flags:
 
@@ -105,7 +105,7 @@ The keygen supports the following command-line flags:
 
 Flags are persisted to `.config.ini` in the same directory as `nixon.jar`.
 
-### 📁 Configuration File
+### ▸ Configuration File
 
 The keygen stores its settings in a `.config.ini` file located in the same directory as `nixon.jar`:
 
@@ -114,7 +114,7 @@ auto_run=0    # 0 = disabled, 1 = auto-launch BurpSuite
 ignore=0      # 0 = check for updates, 1 = skip version check
 ```
 
-## 📋 Prerequisites
+## ▸ Prerequisites
 
 - **Operating System:** Windows 10/11, Linux (any distribution), or macOS 10.14+
 - **Java Version:** OpenJDK 21.0.9+ (recommended)
@@ -123,7 +123,7 @@ ignore=0      # 0 = check for updates, 1 = skip version check
 - **Storage:** Minimum 500 MB free space
 - **Memory:** At least 1 GB RAM recommended
 
-## 🚀 Quick Start
+## → Quick Start
 
 ### Step 1: Clone the Repository
 
@@ -146,7 +146,7 @@ After installing Java 21, proceed to the [Running the Keygen](#-running-the-keyg
 
 ---
 
-## 🪟 Windows Installation
+## ❖ Windows Installation
 
 ### Step 1: Download OpenJDK 21
 
@@ -216,7 +216,7 @@ OpenJDK Runtime Environment (build 21.0.9+10)
 OpenJDK 64-Bit Server VM (build 21.0.9+10, mixed mode, sharing)
 ```
 
-✅ **Success!** Java 21 is now installed and configured.
+✓ **Success!** Java 21 is now installed and configured.
 
 ### Step 5: Navigate to Keygen Directory
 
@@ -242,7 +242,7 @@ java -jar nixon.jar
 
 ---
 
-## 🐧 Linux Installation
+## ❖ Linux Installation
 
 ### Step 1: Update Package Repository
 
@@ -335,9 +335,9 @@ OpenJDK 64-Bit Server VM (build 21.0.9+10-Debian-1deb13u1, mixed mode, sharing)
 ```
 
 **Verify these details:**
-- ✅ Version: `21.0.9` or higher
-- ✅ 64-Bit Server VM
-- ✅ Build includes your distribution identifier
+- ✓ Version: `21.0.9` or higher
+- ✓ 64-Bit Server VM
+- ✓ Build includes your distribution identifier
 
 ### Step 5: Set File Permissions
 
@@ -361,7 +361,7 @@ GDK_BACKEND=x11 java -jar nixon.jar
 
 ---
 
-## 🍎 macOS Installation
+## ❖ macOS Installation
 
 ### Option A: Using Homebrew (Recommended)
 
@@ -469,7 +469,7 @@ java -jar nixon.jar
 
 ---
 
-## 🎮 Running the Keygen
+## ▶ Running the Keygen
 
 Once Java 21 is properly installed on your system, launching the keygen is straightforward:
 
@@ -520,23 +520,23 @@ java -jar nixon.jar -n "YourName"
 
 ---
 
-## 📺 Video Tutorial - IMPORTANT!
+## ▸ Video Tutorial - IMPORTANT!
 
-**⚠️ CRITICAL: After successfully launching nixon.jar, you MUST follow the complete video tutorial below:**
+**‼ CRITICAL: After successfully launching nixon.jar, you MUST follow the complete video tutorial below:**
 
 ### 🎥 [Click Here to Watch the Complete Activation Tutorial](YOUR_VIDEO_LINK_HERE)
 
 **The video demonstrates:**
-- 🔹 Complete keygen interface walkthrough
-- 🔹 Step-by-step license generation process
-- 🔹 BurpSuite Professional activation procedure
-- 🔹 License key application and verification
-- 🔹 Understanding the Instrumentation Agent workflow
-- 🔹 Troubleshooting common activation issues
-- 🔹 Post-activation configuration and testing
-- 🔹 Verifying successful bypass of integrity checks
+- ◦ Complete keygen interface walkthrough
+- ◦ Step-by-step license generation process
+- ◦ BurpSuite Professional activation procedure
+- ◦ License key application and verification
+- ◦ Understanding the Instrumentation Agent workflow
+- ◦ Troubleshooting common activation issues
+- ◦ Post-activation configuration and testing
+- ◦ Verifying successful bypass of integrity checks
 
-**⚠️ Do not proceed without watching this tutorial!** Improper usage may result in:
+**‼ Do not proceed without watching this tutorial!** Improper usage may result in:
 - Activation failures
 - Application crashes
 - Invalid license generation
@@ -544,11 +544,11 @@ java -jar nixon.jar -n "YourName"
 
 ---
 
-## 🔧 Troubleshooting
+## ⚙ Troubleshooting
 
-### 🪟 Windows-Specific Issues
+### ❖ Windows-Specific Issues
 
-#### ❌ "'java' is not recognized as an internal or external command"
+#### ✗ "'java' is not recognized as an internal or external command"
 
 **Cause:** Java is not in your system PATH or JAVA_HOME is not set correctly.
 
@@ -560,7 +560,7 @@ java -jar nixon.jar -n "YourName"
 3. **Important:** Close and reopen Command Prompt/PowerShell
 4. Test: `java -version`
 
-#### ❌ Windows Defender blocks nixon.jar
+#### ✗ Windows Defender blocks nixon.jar
 
 **Solution:**
 1. Open Windows Security
@@ -569,7 +569,7 @@ java -jar nixon.jar -n "YourName"
 4. Add an exclusion for the repository folder
 5. Retry launching the JAR
 
-#### ❌ Double-clicking nixon.jar opens WinRAR/7-Zip
+#### ✗ Double-clicking nixon.jar opens WinRAR/7-Zip
 
 **Cause:** File association is incorrect.
 
@@ -580,9 +580,9 @@ java -jar nixon.jar -n "YourName"
 4. Check "Always use this app"
 5. Click OK
 
-### 🐧 Linux-Specific Issues
+### ❖ Linux-Specific Issues
 
-#### ❌ "command not found: java"
+#### ✗ "command not found: java"
 
 **Solution:**
 ```bash
@@ -596,7 +596,7 @@ sudo dnf install java-21-openjdk-devel -y
 sudo pacman -S jdk21-openjdk
 ```
 
-#### ❌ GUI window doesn't appear
+#### ✗ GUI window doesn't appear
 
 **Solution 1: Check display environment**
 ```bash
@@ -622,7 +622,7 @@ sudo dnf install libXrender libXtst libXi libXext -y
 GDK_BACKEND=x11 java -jar nixon.jar
 ```
 
-#### ❌ "Permission denied" error
+#### ✗ "Permission denied" error
 
 **Solution:**
 ```bash
@@ -635,7 +635,7 @@ ls -la nixon.jar
 # Should show: -rwxr-xr-x
 ```
 
-#### ❌ Wrong Java version active
+#### ✗ Wrong Java version active
 
 **Solution:**
 ```bash
@@ -647,9 +647,9 @@ sudo update-alternatives --config java
 java -version
 ```
 
-### 🍎 macOS-Specific Issues
+### ❖ macOS-Specific Issues
 
-#### ❌ "java: command not found"
+#### ✗ "java: command not found"
 
 **Solution:**
 
@@ -668,7 +668,7 @@ export PATH="$JAVA_HOME/bin:$PATH"
 source ~/.zshrc
 ```
 
-#### ❌ Gatekeeper prevents opening
+#### ✗ Gatekeeper prevents opening
 
 **Cause:** macOS blocks unsigned applications.
 
@@ -685,7 +685,7 @@ xattr -d com.apple.quarantine nixon.jar
 java -jar nixon.jar
 ```
 
-#### ❌ Wrong Java version on macOS
+#### ✗ Wrong Java version on macOS
 
 **Solution:**
 ```bash
@@ -702,7 +702,7 @@ java -version
 echo 'export JAVA_HOME=$(/usr/libexec/java_home -v 21)' >> ~/.zshrc
 ```
 
-#### ❌ "Damaged and can't be opened" error
+#### ✗ "Damaged and can't be opened" error
 
 **Solution:**
 ```bash
@@ -715,7 +715,7 @@ xattr -d com.apple.quarantine nixon.jar
 
 ### ⚙️ Universal Issues (All Platforms)
 
-#### ❌ "UnsupportedClassVersionError"
+#### ✗ "UnsupportedClassVersionError"
 
 **Cause:** JAR compiled for Java 21, but you're running an older version.
 
@@ -727,7 +727,7 @@ java -version
 # If not 21.x, reinstall Java 21 following your platform's guide above
 ```
 
-#### ❌ "A JNI error has occurred"
+#### ✗ "A JNI error has occurred"
 
 **Cause:** Java version mismatch or corrupted JAR.
 
@@ -743,7 +743,7 @@ java -version
    ```
 3. Re-clone repository if hash doesn't match
 
-#### ❌ GUI appears but freezes/crashes
+#### ✗ GUI appears but freezes/crashes
 
 **Solution:**
 ```bash
@@ -754,7 +754,7 @@ java -Xmx1024m -jar nixon.jar
 java -jar nixon.jar 2>&1 | tee error.log
 ```
 
-#### ❌ "Could not find or load main class"
+#### ✗ "Could not find or load main class"
 
 **Cause:** Corrupted or incomplete JAR file.
 
@@ -767,7 +767,7 @@ java -jar nixon.jar 2>&1 | tee error.log
    git clone https://github.com/Nixon-H/burpsuite-professional-keygen.git
    ```
 
-#### ❌ "Click to download" shows even when I'm on the latest version
+#### ✗ "Click to download" shows even when I'm on the latest version
 
 **Cause:** The version detection compares your local `burpsuite_*.jar` filename against the latest version from the PortSwigger API. If there's no matching `burpsuite_*.jar` in the same directory as `nixon.jar`, the check falls through.
 
@@ -779,7 +779,7 @@ java -jar nixon.jar 2>&1 | tee error.log
 
 ---
 
-## 💡 Advanced Usage Tips
+## ▸ Advanced Usage Tips
 
 ### Running with Custom JVM Options
 
@@ -863,7 +863,7 @@ dir "C:\Program Files\Java"
 
 ---
 
-## 📁 Repository Structure
+## ▸ Repository Structure
 
 ```
 burpsuite-professional-keygen/
@@ -888,18 +888,18 @@ burpsuite-professional-keygen/
 
 ---
 
-## 🔒 Important Notes
+## ▸ Important Notes
 
-- ⚠️ **Java 21 Recommended** - Designed specifically for Java 21 with full Instrumentation API support
-- ⚠️ **Memory-Only Operations** - All bytecode modifications occur in RAM; no disk files are altered
-- ⚠️ **Cross-Platform** - Works identically on Windows, Linux, and macOS
-- ⚠️ **Educational Purpose** - This tool is for security research and educational purposes only
+- ‼ **Java 21 Recommended** - Designed specifically for Java 21 with full Instrumentation API support
+- ‼ **Memory-Only Operations** - All bytecode modifications occur in RAM; no disk files are altered
+- ‼ **Cross-Platform** - Works identically on Windows, Linux, and macOS
+- ‼ **Educational Purpose** - This tool is for security research and educational purposes only
 - 🔄 Keep your Java installation updated for security patches
-- 🛡️ Some antivirus software may flag the tool - this is expected for bytecode manipulation utilities
+- ▸ Some antivirus software may flag the tool - this is expected for bytecode manipulation utilities
 
 ---
 
-## 🛡️ Security & Technical Details
+## ▸ Security & Technical Details
 
 ### ASM Framework
 This tool leverages the **ASM Bytecode Engineering Library**, a powerful framework for analyzing, modifying, and generating Java bytecode. The agent operates at the bytecode level, making it version-agnostic and resilient to obfuscation.
@@ -932,7 +932,7 @@ This tool overcomes these limitations by:
 
 ---
 
-## 📚 Related Resources
+## ▸ Related Resources
 
 - [BurpSuite Official Documentation](https://portswigger.net/burp/documentation)
 - [OpenJDK 21 Release Notes](https://openjdk.org/projects/jdk/21/)
@@ -942,7 +942,7 @@ This tool overcomes these limitations by:
 
 ---
 
-## 🤝 Contributing
+## ▸ Contributing
 
 Contributions, issues, and feature requests are welcome!
 
@@ -961,24 +961,24 @@ Contributions, issues, and feature requests are welcome!
 
 ---
 
-## 📄 License
+## ▸ License
 
 This project is licensed under the Educational Use License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## ⚠️ Disclaimer
+## ‼ Disclaimer
 
 **This repository is for educational purposes and security research only.** It demonstrates the capabilities of the Java Instrumentation API and ASM library for runtime analysis and bytecode manipulation.
 
 The authors and contributors of this repository:
 
-- ❌ Do not endorse software piracy or license violations
-- ❌ Are not liable for any misuse of this tool
-- ❌ Do not provide support for illegal activities
-- ✅ Recommend purchasing official licenses for commercial use
-- ✅ Encourage responsible security research and ethical hacking
-- ✅ Provide this tool "as-is" without any warranties
+- ✗ Do not endorse software piracy or license violations
+- ✗ Are not liable for any misuse of this tool
+- ✗ Do not provide support for illegal activities
+- ✓ Recommend purchasing official licenses for commercial use
+- ✓ Encourage responsible security research and ethical hacking
+- ✓ Provide this tool "as-is" without any warranties
 
 **Use only on software you own or have explicit permission to audit.**
 
@@ -992,7 +992,7 @@ Users are responsible for ensuring compliance with all applicable laws and softw
 
 ---
 
-## 💬 Support
+## ▸ Support
 
 If you encounter issues:
 
@@ -1012,7 +1012,7 @@ If you encounter issues:
 
 ---
 
-## 🌟 Star History
+## ★ Star History
 
 If this tool helped you understand Java Instrumentation, bytecode manipulation, and reverse engineering concepts, please consider giving it a ⭐ star!
 
@@ -1023,6 +1023,6 @@ If this tool helped you understand Java Instrumentation, bytecode manipulation, 
 
 ---
 
-**Made with ❤️ for the security research and reverse engineering community**
+**Made with ♥ for the security research and reverse engineering community**
 
 *Last updated: June 2026*
